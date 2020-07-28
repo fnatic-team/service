@@ -48,4 +48,4 @@ const userSchema = Schema({
 
 const User = mongoose.model(`user`, userSchema);
 
-module.exports = Audience;
+module.exports = User;
