@@ -4,6 +4,11 @@ const Schema = mongoose.Schema;
 const paymentSchema = Schema({
     name: {
         type: String,
+        required: true,
+    },
+    location: {
+        type: String,
+        required: true,
     },
     email: {
         type: String,
@@ -40,6 +45,7 @@ const paymentSchema = Schema({
     },
 });
 
-const Payment = mongoose.model(`payments`, paymentSchema);
+const Payment = mongoose.model(`payment`, paymentSchema);
 
 module.exports = Payment;
+

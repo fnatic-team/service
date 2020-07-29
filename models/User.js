@@ -36,7 +36,11 @@ const userSchema = Schema({
     },
     bio: {
         type: String,
-        default: 'none',
+        default: '',
+    },
+    motivation: {
+        type: String,
+        default: '',
     },
     image: {
         type: String,
