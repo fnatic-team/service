@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
-const { MONGODB_URI_LIVE, MONGODB_URI_LOCAL } = require('./environment');
+const { MONGODB_URI_LOCAL, MONGODB_URI_LIVE } = require('./environment');
 
 mongoose
-    .connect(MONGODB_URI_LIVE || MONGODB_URI_LOCAL, {
+    .connect(MONGODB_URI_LOCAL || MONGODB_URI_LIVE, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        useFindAndModify: false,
         useCreateIndex: true,
+        useFindAndModify: false,
     })
     .then(() => {
         console.log('Success connect to database');
