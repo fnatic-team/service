@@ -1,9 +1,9 @@
-const User = require('../../models');
+const { User } = require('../../models');
 const { hashPassword } = require('../../helpers');
 
 module.exports = {
     Registration: async (req, res) => {
-        const { name, email, password, phone, role } = req.body;
+        const { name, username, email, password, phone, role, cv } = req.body;
         try {
             const checkedUser = await User.findOne({ email });
 
@@ -17,20 +17,17 @@ module.exports = {
 
             const result = await User.create({
                 name,
+                username,
                 email,
                 password: hashedPassword,
                 role,
                 phone,
+                cv,
             });
             res.send({ message: 'success', data: result });
         } catch (error) {
             console.log(error);
             res.send(error);
         }
-    },
-
-    createProfil: async (req, res) => {
-        try {
-        } catch (error) {}
     },
 };
