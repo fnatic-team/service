@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const paymentSchema = Schema({
- name: {
+    name: {
         type: String,
     },
     email: {
