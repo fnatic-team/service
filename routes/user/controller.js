@@ -3,9 +3,12 @@ const { hashPassword } = require('../../helpers');
 
 module.exports = {
     Registration: async (req, res) => {
-        const { name, username, email, password, phone, role, cv } = req.body;
         try {
-            const checkedUser = await User.findOne({ email });
+            const checkedUser = await User.findOne({ email: req.body.email });
+
+            if (req.body.category !== undefined) {
+                req.body.role = 'speaker';
+            }
 
             if (checkedUser) {
                 return res.send({
@@ -13,21 +16,16 @@ module.exports = {
                 });
             }
 
-            const hashedPassword = await hashPassword(password);
+          req.body.password = await hashPassword(req.body.password);
 
             const result = await User.create({
-                name,
-                username,
-                email,
-                password: hashedPassword,
-                role,
-                phone,
-                cv,
+                ...req.body
             });
             res.send({ message: 'success', data: result });
         } catch (error) {
-            console.log(error);
             res.send(error);
         }
     },
+    
+    
 };
