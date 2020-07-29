@@ -21,14 +21,14 @@ const paymentSchema = Schema({
     },
     timing: {
         type: Date,
-        required,
+        required: true,
     },
     audiences: {
         type: String,
     },
     duration: {
         type: String,
-        required,
+        required: true,
     },
     createdAt: {
         type: Date,

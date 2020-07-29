@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { Registration } = require('./controller');
 
-router.post('/', Registration);
+//Route CRUD Transaksi
+
+router.get('/', require('./controller').getTransaksi);
 
 module.exports = router;
