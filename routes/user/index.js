@@ -3,12 +3,8 @@ const router = express.Router();
 
 const { verifyToken } = require('../../helpers/token');
 
-const {
-    userRegistration,
-    userLogin,
-} = require('./controller');
+const { userLogin } = require('./controller');
 
-router.post('/', userRegistration);
 router.post('/login', userLogin);
 
 const { Registration } = require('./controller');
