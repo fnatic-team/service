@@ -1,6 +1,6 @@
 const { User} = require('../../models/User');
 const { hashPassword } = require('../../helpers');
-// const bcrypt = require('bcryptjs');
+const bcrypt = require('bcryptjs');
 const { createToken } = require('../../helpers/token');
 
 module.exports = {
