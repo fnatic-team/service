@@ -3,39 +3,68 @@ const Schema = mongoose.Schema;
 
 const userSchema = Schema({
     name: {
-        Type: String,
+        type: String,
         required: true,
     },
     email: {
-        Type: String,
+        type: String,
         unique: true,
         required: true,
     },
     username: {
-        Type: String,
+        type: String,
         required: true,
     },
     password: {
-        Type: String,
+        type: String,
         required: true,
     },
     phone: {
-        Type: Number,
+        type: Number,
     },
     role: {
-        Type: String,
+        type: String,
         default: 'audience',
     },
     status: {
-        Type: String,
+        type: String,
         default: 'pending',
     },
-    profil: [
-        {
-            Type: Schema.Types.ObjectId,
-            ref: 'profil',
-        },
-    ],
+    bio: {
+        type: String,
+        default: '',
+    },
+    motivation: {
+        type: String,
+        default: '',
+    },
+    image: {
+        type: String,
+    },
+    location: {
+        type: String,
+        default: '',
+    },
+    fee: {
+        type: Number,
+        default: 0,
+    },
+    experience: {
+        type: String,
+        default: '',
+    },
+    education: {
+        type: String,
+        default: '',
+    },
+    experienceYear: {
+        type: Array,
+        default: '',
+    },
+    educationYear: {
+        type: Array,
+        default: '',
+    },
     createdAt: {
         type: Date,
         default: Date.now,
