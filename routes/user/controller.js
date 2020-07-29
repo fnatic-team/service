@@ -1,21 +1,23 @@
+
 const { User} = require('../../models');
 const { hashPassword } = require('../../helpers');
 const bcrypt = require('bcryptjs');
 const { createToken } = require('../../helpers/token');
 
 module.exports = {
-    userRegistration: async (req, res) => {
-        const { name, email, password } = req.body;
-
+    Registration: async (req, res) => {
         try {
-            const checkedUser = await User.findOne({ email });
+            const checkedUser = await User.findOne({ email: req.body.email });
+
+            if (req.body.category !== undefined) {
+                req.body.role = 'speaker';
+            }
 
             if (checkedUser) {
                 return res.send({
                     message: `Email is already registered`,
                 });
             }
-
             const hashedPassword = await hashPassword(password);
 
             await User.create({
@@ -67,3 +69,4 @@ module.exports = {
         }
     }
 }
+

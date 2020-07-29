@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+
 const { verifyToken } = require('../../helpers/token');
 
 const {
@@ -9,5 +10,9 @@ const {
 
 router.post('/', userRegistration);
 router.post('/login', userLogin);
+
+const { Registration } = require('./controller');
+
+router.post('/', Registration);
 
 module.exports = router;

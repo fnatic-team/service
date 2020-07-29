@@ -20,11 +20,15 @@ const userSchema = Schema({
         required: true,
     },
     phone: {
-        type: Number,
+        type: String,
     },
     role: {
         type: String,
         default: 'audience',
+    },
+    category: {
+        type: String,
+        default: 'none',
     },
     status: {
         type: String,
@@ -43,27 +47,15 @@ const userSchema = Schema({
     },
     location: {
         type: String,
-        default: '',
+        default: 'none',
     },
     fee: {
-        type: Number,
-        default: 0,
-    },
-    experience: {
         type: String,
-        default: '',
+        default: 'none',
     },
-    education: {
+    cv: {
         type: String,
-        default: '',
-    },
-    experienceYear: {
-        type: Array,
-        default: '',
-    },
-    educationYear: {
-        type: Array,
-        default: '',
+        default: 'none',
     },
     createdAt: {
         type: Date,
@@ -75,6 +67,6 @@ const userSchema = Schema({
     },
 });
 
-const User = mongoose.model(`user`, userSchema);
+const User = mongoose.model(`users`, userSchema);
 
 module.exports = User;
