@@ -1,7 +1,9 @@
-const Profil = require('./Profil');
 const User = require('./User');
+const Admin = require('./Admin');
+const Payment = require('./Payment');
 
 module.exports = {
-    Profil,
     User,
+    Admin,
+    Payment,
 };
