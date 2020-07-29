@@ -19,9 +19,6 @@ const paymentSchema = Schema({
         type: String,
         default: 'admin',
     },
-    location: {
-        type: String,
-    },
     theme: {
         type: String,
     },
