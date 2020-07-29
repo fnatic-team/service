@@ -2,7 +2,6 @@ const { User } = require('../../models');
 const { hashPassword } = require('../../helpers');
 const bcrypt = require('bcryptjs');
 const { createToken } = require('../../helpers/token');
-const { findByIdAndDelete } = require('../../models/User');
 
 module.exports = {
     Registration: async (req, res) => {
@@ -24,9 +23,12 @@ module.exports = {
             const result = await User.create({
                 ...req.body,
             });
-            res.send({ message: 'success', data: result });
+
+            res.send({
+                message: `Registration success`,
+            });
         } catch (error) {
-            res.send(error);
+            console.error(error);
         }
     },
 
@@ -78,7 +80,7 @@ module.exports = {
                 }
             );
 
-            res.send({ message: 'success add profil', data: result });
+            res.send({ message: 'success update profil', data: result });
         } catch (error) {
             res.send(error);
         }
@@ -142,11 +144,10 @@ module.exports = {
         console.log(user);
         try {
             const result = await User.find({
-                name: 'sinta',
-                // name: {
-                //     $regex: user,
-                //     $options: 'i',
-                // },
+                name: {
+                    $regex: user,
+                    $options: 'i',
+                },
             });
 
             res.send(result);
