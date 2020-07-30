@@ -17,13 +17,13 @@ const {
 
 router.post('/', Registration);
 router.post('/login', userLogin);
-router.put('/:id', updateProfil);
-router.get('/allUser', getAllUser);
-router.get('/audience', getAllAudience);
-router.get('/speaker', getAllSpeaker);
-router.get('/:id', getUser);
-router.get('/category/', filterByCategory);
-router.get('/name/', filterByName);
-router.delete('/:id', deleteUser);
+router.put('/:id', verifyToken, updateProfil);
+router.get('/allUser', verifyToken, getAllUser);
+router.get('/audience', verifyToken, getAllAudience);
+router.get('/speaker', verifyToken, getAllSpeaker);
+router.get('/:id', verifyToken, getUser);
+router.get('/category/', verifyToken, filterByCategory);
+router.get('/name/', verifyToken, filterByName);
+router.delete('/:id', verifyToken, deleteUser);
 
 module.exports = router;
