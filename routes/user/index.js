@@ -24,7 +24,7 @@ router.put('/:id', verifyToken, updateProfil);
 router.get('/allUser', verifyToken, getAllUser);
 router.get('/audience', verifyToken, getAllAudience);
 router.get('/speaker', verifyToken, getAllSpeaker);
-router.get('/user/:id', verifyToken, getUser);
+router.get('/userId/:id', verifyToken, getUser);
 router.get('/category/', verifyToken, filterByCategory);
 router.get('/name/', verifyToken, filterByName);
 router.get('/location/', verifyToken, filterByLocation);

@@ -44,7 +44,8 @@
                                 <td>/api/admin/add/:roles</td>
                                 <td>
                                     {fullname:"Admin", username: "admin",
-                                    password: "123", role: "admin", image_url: "linkUrl"}
+                                    password: "123", role: "admin", image_url:
+                                    "linkUrl"}
                                 </td>
                             </tr>
                             <tr>
@@ -81,7 +82,8 @@
                                 <td>/api/admin/:id</td>
                                 <td>
                                     {fullname:"Admin", username: "admin",
-                                    password: "123", role: "admin", image_url: "linkUrl"}
+                                    password: "123", role: "admin", image_url:
+                                    "linkUrl"}
                                 </td>
                             </tr>
                             <tr>
@@ -110,6 +112,7 @@
                                 <td>GET</td>
                                 <td>/api/user/allUser</td>
                                 <td>
+                                    (with token) <br />
                                     -
                                 </td>
                             </tr>
@@ -119,6 +122,8 @@
                                 <td>GET</td>
                                 <td>/api/user/audience</td>
                                 <td>
+                                    (with token) <br />
+
                                     -
                                 </td>
                             </tr>
@@ -128,6 +133,8 @@
                                 <td>GET</td>
                                 <td>/api/user/speaker</td>
                                 <td>
+                                    (with token) <br />
+
                                     -
                                 </td>
                             </tr>
@@ -135,37 +142,85 @@
                                 <th scope="row">11.</th>
                                 <td>get one User(User)</td>
                                 <td>GET</td>
-                                <td>/api/user/:id</td>
+                                <td>/api/user/userId/:id</td>
                                 <td>
-                                    {api/user/123}
+                                    (with token) <br />
+
+                                    {api/user/userId/123}
                                 </td>
                             </tr>
                             <tr>
                                 <th scope="row">12.</th>
-                                <td>delete User(User)</td>
-                                <td>DELETE</td>
-                                <td>/api/user/:id</td>
+                                <td>get Speaker by category(User)</td>
+                                <td>GET</td>
+                                <td>/api/user/category/</td>
                                 <td>
-                                    {api/user/123}
+                                    (with token) <br />
+
+                                    {api/user/category/?category=abc}
                                 </td>
                             </tr>
                             <tr>
                                 <th scope="row">13.</th>
-                                <td>update User data(User)</td>
-                                <td>PUT</td>
-                                <td>/api/user/:id</td>
+                                <td>search by Name (User)</td>
+                                <td>GET</td>
+                                <td>/api/user/name/</td>
                                 <td>
-                                    routes: api/user/123 {bio:'abc',
-                                    'location':'abc', fee:'abc'}
+                                    (with token) <br />
+
+                                    {api/user/name/?name=abc}
                                 </td>
                             </tr>
-
                             <tr>
-                                <th scope="row">9.</th>
+                                <th scope="row">14.</th>
+                                <td>get Speaker by location(User)</td>
+                                <td>GET</td>
+                                <td>/api/user/location/</td>
+                                <td>
+                                    (with token) <br />
+
+                                    {api/user/location/?location=abc}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">15.</th>
+                                <td>get active Speaker (User)</td>
+                                <td>GET</td>
+                                <td>/api/user/activeSpeaker</td>
+                                <td>
+                                    (with token) <br />
+                                    -
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">16.</th>
+                                <td>get non active Speaker (User)</td>
+                                <td>GET</td>
+                                <td>/api/user/:InActiveSpeaker</td>
+                                <td>
+                                    (with token) <br />
+                                    -
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">17.</th>
+                                <td>delete User(User)</td>
+                                <td>DELETE</td>
+                                <td>/api/user/:id</td>
+                                <td>
+                                    (with token) <br />
+
+                                    {api/user/123}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">18.</th>
                                 <td>update User data(User)</td>
                                 <td>PUT</td>
                                 <td>/api/user/:id</td>
                                 <td>
+                                    (with token) <br />
+
                                     routes: api/user/123 {bio:'abc',
                                     'location':'abc', fee:'abc'}
                                 </td>
