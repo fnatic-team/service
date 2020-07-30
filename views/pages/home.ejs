@@ -22,7 +22,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <p class="h2 text-center mt-3">Task Management API</p>
+                    <p class="h2 text-center mt-3">Narasumber API</p>
                     <p class="h6 text-center mb-3">
                         Dibawah ini adalah list endpoint yang bisa kalian akses
                     </p>
@@ -45,6 +45,81 @@
                                 <td>
                                     {name:"Admin", email: "admin@gmail.com",
                                     password: "123"}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2.</th>
+                                <td>Registrasi(User)</td>
+                                <td>POST</td>
+                                <td>/api/user/</td>
+                                <td>
+                                    {name:"abc", email: "abc@gmail.com",
+                                    password: "123" , username:'abc' ,
+                                    phone:'123'}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3.</th>
+                                <td>Login(User)</td>
+                                <td>POST</td>
+                                <td>/api/user/login</td>
+                                <td>
+                                    {email: "abc@gmail.com", password: "123"}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4.</th>
+                                <td>get All User(User)</td>
+                                <td>GET</td>
+                                <td>/api/user/allUser</td>
+                                <td>
+                                    -
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5.</th>
+                                <td>get All Audience(User)</td>
+                                <td>GET</td>
+                                <td>/api/user/audience</td>
+                                <td>
+                                    -
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6.</th>
+                                <td>get All Speaker(User)</td>
+                                <td>GET</td>
+                                <td>/api/user/speaker</td>
+                                <td>
+                                    -
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">7.</th>
+                                <td>get one User(User)</td>
+                                <td>GET</td>
+                                <td>/api/user/:id</td>
+                                <td>
+                                    {api/user/123}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">8.</th>
+                                <td>delete User(User)</td>
+                                <td>DELETE</td>
+                                <td>/api/user/:id</td>
+                                <td>
+                                    {api/user/123}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">9.</th>
+                                <td>update User data(User)</td>
+                                <td>PUT</td>
+                                <td>/api/user/:id</td>
+                                <td>
+                                    routes: api/user/123 {bio:'abc',
+                                    'location':'abc', fee:'abc'}
                                 </td>
                             </tr>
                         </tbody>
