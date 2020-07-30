@@ -4,10 +4,11 @@ const Schema = mongoose.Schema;
 const paymentSchema = Schema({
     name: {
         type: String,
+        ref: 'users',
     },
-    location: {
-        type: String,
-        required: true,
+    UserID: {
+        type: Schema.Types.ObjectId,
+        ref: 'users',
     },
     email: {
         type: String,
@@ -15,21 +16,34 @@ const paymentSchema = Schema({
     phone: {
         type: String,
     },
-    name_event: {
-        type: String,
-    },
-    location: {
+    nama_acara: {
         type: String,
         required: true,
     },
-    timing: {
+    waktu_acara: {
+        type: String,
+        required: true,
+    },
+    tanggal_acara: {
         type: Date,
         required: true,
     },
-    audiences: {
+    kota: {
+        type: String,
+        required: true,
+    },
+    alamat: {
+        type: String,
+        required: true,
+    },
+    jml_peserta: {
         type: String,
     },
-    duration: {
+    durasi: {
+        type: String,
+        required: true,
+    },
+    deskripsi: {
         type: String,
         required: true,
     },
