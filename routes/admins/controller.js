@@ -6,29 +6,36 @@ const { createToken } = require('../../helpers/token');
 module.exports = {
     addAdmin: async (req, res) => {
         const { fullname, username, password, role, image_url} = req.body;
+const roles = req.params.roles;
 
         try {
-            const checkedAdmin = await Admin.findOne({ username });
+            if(roles === 'super admin') {
 
-            if (checkedAdmin) {
-                return res.send({
-                    message: `Username is already registered`,
+            console.log(roles);
+                const checkedAdmin = await Admin.findOne({ username });
+
+                if (checkedAdmin) {
+                    return res.send({
+                        message: `Username is already registered`,
+                    });
+                }
+    
+                const hashedPassword = await hashPassword(password);
+    
+                await Admin.create({
+                    fullname,
+                    username,
+                    password: hashedPassword,
+                    role,
+                    image_url,
                 });
+    
+                res.send({
+                    message: `Add admin success`,
+                });
+            }else {
+                res.send(`you are not super admin`);
             }
-
-            const hashedPassword = await hashPassword(password);
-
-            await Admin.create({
-                fullname,
-                username,
-                password: hashedPassword,
-                role,
-                image_url,
-            });
-
-            res.send({
-                message: `Add admin success`,
-            });
         } catch (error) {
             console.error(error);
         }
@@ -71,6 +78,31 @@ module.exports = {
             });
         }else {
             res.send(`username is not registered`);
+        }
+    },
+    updateAdmin: async (req, res) => {
+        const id = req.params.id;
+        try {
+            const result = await User.findByIdAndUpdate(
+                { _id: id },
+                {
+                    ...req.body,
+                }
+            );
+
+            res.send({ message: 'Update profil admin succes', data: result });
+        } catch (error) {
+            res.send(error);
+        }
+    },
+    deleteAdmin: async (req, res) =>{
+        const id = req.params.id;
+        try {
+            await Admin.findByIdAndDelete(id);
+
+            res.send({ message: 'deleted succes' });
+        } catch (error) {
+            res.send(error);
         }
     }
 }

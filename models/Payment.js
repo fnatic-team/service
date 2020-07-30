@@ -6,14 +6,15 @@ const paymentSchema = Schema({
         type: String,
         required: true,
     },
-    email: {
-        type: String,
-        unique: true,
-        required: true,
-    },
     location: {
         type: String,
         required: true,
+    },
+    email: {
+        type: String,
+    },
+    phone: {
+        type: String,
     },
     event: {
         type: String,
@@ -21,9 +22,18 @@ const paymentSchema = Schema({
     },
     location: {
         type: String,
+        required: true,
     },
-    theme: {
+    timing: {
+        type: Date,
+        required: true,
+    },
+    audiences: {
         type: String,
+    },
+    duration: {
+        type: String,
+        required: true,
     },
     createdAt: {
         type: Date,
@@ -38,3 +48,4 @@ const paymentSchema = Schema({
 const Payment = mongoose.model(`payment`, paymentSchema);
 
 module.exports = Payment;
+
