@@ -10,7 +10,7 @@ const {
     deleteAdmin
 } = require('./controller');
 
-router.post('/:roles', addAdmin);
+router.post('/add/:roles', addAdmin);
 router.post('/login', adminLogin);
 router.get('/getAllAdmin', verifyToken, getAllAdmin);
 router.put('/:id', verifyToken, updateAdmin);

@@ -7,7 +7,6 @@ module.exports = {
     addAdmin: async (req, res) => {
         const { fullname, username, password, role, image_url} = req.body;
 const roles = req.params.roles;
-
         try {
             if(roles === 'super admin') {
 
@@ -83,7 +82,7 @@ const roles = req.params.roles;
     updateAdmin: async (req, res) => {
         const id = req.params.id;
         try {
-            const result = await User.findByIdAndUpdate(
+            const result = await Admin.findByIdAndUpdate(
                 { _id: id },
                 {
                     ...req.body,

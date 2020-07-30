@@ -39,16 +39,53 @@
                         <tbody>
                             <tr>
                                 <th scope="row">1.</th>
-                                <td>Registrasi(Admin)</td>
+                                <td>Add(Admin)</td>
                                 <td>POST</td>
-                                <td>/api/admin/</td>
+                                <td>/api/admin/add/:roles</td>
                                 <td>
-                                    {name:"Admin", email: "admin@gmail.com",
-                                    password: "123"}
+                                    {fullname:"Admin", username: "admin",
+                                    password: "123", role: "admin", image_url: "linkUrl"}
                                 </td>
                             </tr>
                             <tr>
                                 <th scope="row">2.</th>
+                                <td>Login(Admin)</td>
+                                <td>POST</td>
+                                <td>/api/admin/login</td>
+                                <td>
+                                    {username: "admin", password: "123",}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3.</th>
+                                <td>getAllAdmin(Admin)</td>
+                                <td>GET</td>
+                                <td>/api/admin/getAllAdmin</td>
+                                <td>
+                                    {}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4.</th>
+                                <td>Delete(Admin)</td>
+                                <td>DELETE</td>
+                                <td>/api/admin/:id</td>
+                                <td>
+                                    {}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5.</th>
+                                <td>Update(Admin)</td>
+                                <td>PUT</td>
+                                <td>/api/admin/:id</td>
+                                <td>
+                                    {fullname:"Admin", username: "admin",
+                                    password: "123", role: "admin", image_url: "linkUrl"}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6.</th>
                                 <td>Registrasi(User)</td>
                                 <td>POST</td>
                                 <td>/api/user/</td>
@@ -59,7 +96,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row">3.</th>
+                                <th scope="row">7.</th>
                                 <td>Login(User)</td>
                                 <td>POST</td>
                                 <td>/api/user/login</td>
@@ -68,7 +105,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row">4.</th>
+                                <th scope="row">8.</th>
                                 <td>get All User(User)</td>
                                 <td>GET</td>
                                 <td>/api/user/allUser</td>
@@ -77,7 +114,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row">5.</th>
+                                <th scope="row">9.</th>
                                 <td>get All Audience(User)</td>
                                 <td>GET</td>
                                 <td>/api/user/audience</td>
@@ -86,7 +123,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row">6.</th>
+                                <th scope="row">10.</th>
                                 <td>get All Speaker(User)</td>
                                 <td>GET</td>
                                 <td>/api/user/speaker</td>
@@ -95,7 +132,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row">7.</th>
+                                <th scope="row">11.</th>
                                 <td>get one User(User)</td>
                                 <td>GET</td>
                                 <td>/api/user/:id</td>
@@ -104,7 +141,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row">8.</th>
+                                <th scope="row">12.</th>
                                 <td>delete User(User)</td>
                                 <td>DELETE</td>
                                 <td>/api/user/:id</td>
@@ -113,7 +150,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row">9.</th>
+                                <th scope="row">13.</th>
                                 <td>update User data(User)</td>
                                 <td>PUT</td>
                                 <td>/api/user/:id</td>
