@@ -39,6 +39,12 @@ const userSchema = Schema({
     image: {
         type: String,
     },
+    language: {
+        type: String,
+    },
+    address: {
+        type: String,
+    },
     location: {
         type: String,
     },
