@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 const paymentSchema = Schema({
     name: {
         type: String,
-        required: true,
+        ref: 'users',
     },
-    location: {
-        type: String,
-        required: true,
+    UserID: {
+        type: Schema.Types.ObjectId,
+        ref: 'users',
     },
     email: {
         type: String,
@@ -16,22 +16,34 @@ const paymentSchema = Schema({
     phone: {
         type: String,
     },
-    event: {
-        type: String,
-        default: 'admin',
-    },
-    location: {
+    nama_acara: {
         type: String,
         required: true,
     },
-    timing: {
+    waktu_acara: {
+        type: String,
+        required: true,
+    },
+    tanggal_acara: {
         type: Date,
         required: true,
     },
-    audiences: {
+    kota: {
+        type: String,
+        required: true,
+    },
+    alamat: {
+        type: String,
+        required: true,
+    },
+    jml_peserta: {
         type: String,
     },
-    duration: {
+    durasi: {
+        type: String,
+        required: true,
+    },
+    deskripsi: {
         type: String,
         required: true,
     },
@@ -45,7 +57,6 @@ const paymentSchema = Schema({
     },
 });
 
-const Payment = mongoose.model(`payment`, paymentSchema);
+const Payment = mongoose.model(`payments`, paymentSchema);
 
 module.exports = Payment;
-
