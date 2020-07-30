@@ -5,15 +5,18 @@ const paymentSchema = Schema({
     name: {
         type: String,
     },
+    location: {
+        type: String,
+        required: true,
+    },
     email: {
         type: String,
     },
     phone: {
         type: String,
     },
-    event: {
+    name_event: {
         type: String,
-        default: 'admin',
     },
     location: {
         type: String,

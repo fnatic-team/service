@@ -1,22 +1,24 @@
 const { Payment } = require('../../models');
 
 module.exports = {
-    getTransaksi: async (req, res) => {
+    getPayment: async (req, res) => {
         try {
             const result = await Payment.find();
-            res.send({ message: 'get all data', data: result });
+
+            res.send({ message: 'Get All Transaksi', data: result });
         } catch (error) {
             res.send(error);
         }
     },
-    addTransaksi: async (req, res) => {
+
+    addPayment: async (req, res) => {
         try {
-            const result = await Payment.create({
+            const result = await House.create({
                 ...req.body,
             });
-            res.send({ message: 'transaksi berhasil', data: result });
+
+            res.send({ message: 'Transaksi Berhasil', data: result });
         } catch (error) {
-            res.status(403).send({ message: 'forbidden' });
             res.send(error);
         }
     },

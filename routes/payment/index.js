@@ -1,5 +1,7 @@
-const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
 
-//Routes CRUD Transaksi
-router.get('/', require('./controller').getTransaksi);
-router.post('/', require('./controller').addTransaksi);
+router.post('/addpayment', require('./controller').addPayment);
+router.get('/', require('./controller').getPayment);
+
+module.exports = router;

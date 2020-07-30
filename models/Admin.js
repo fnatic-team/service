@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const adminSchema = Schema({
-    name: {
+    username: {
         type: String,
         required: true,
     },
@@ -17,7 +17,7 @@ const adminSchema = Schema({
     },
     role: {
         type: String,
-        default: 'admin',
+        default: 'super admin',
     },
     createdAt: {
         type: Date,

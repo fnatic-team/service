@@ -28,7 +28,6 @@ const userSchema = Schema({
     },
     category: {
         type: String,
-        default: '',
     },
     status: {
         type: String,
@@ -36,22 +35,21 @@ const userSchema = Schema({
     },
     bio: {
         type: String,
-        default: '',
     },
     image: {
         type: String,
     },
     location: {
         type: String,
-        default: '',
     },
     fee: {
-        type: Number,
-        default: 0,
+        type: String,
     },
     cv: {
         type: String,
-        default: '',
+    },
+    rating: {
+        type: Number,
     },
     createdAt: {
         type: Date,
