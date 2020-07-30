@@ -2,13 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const adminSchema = Schema({
-    username: {
+    fullname: {
         type: String,
         required: true,
     },
-    email: {
+    username: {
         type: String,
-        unique: true,
         required: true,
     },
     password: {
@@ -17,7 +16,10 @@ const adminSchema = Schema({
     },
     role: {
         type: String,
-        default: 'super admin',
+        default: 'admin',
+    },
+    image_url: {
+        type: String,
     },
     createdAt: {
         type: Date,

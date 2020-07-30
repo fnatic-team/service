@@ -6,10 +6,14 @@ const {
     adminLogin,
     addAdmin,
     getAllAdmin,
+    updateAdmin,
+    deleteAdmin
 } = require('./controller');
 
-router.post('/', addAdmin);
+router.post('/add/:roles', addAdmin);
 router.post('/login', adminLogin);
 router.get('/getAllAdmin', verifyToken, getAllAdmin);
+router.put('/:id', verifyToken, updateAdmin);
+router.delete('/:id', verifyToken, deleteAdmin);
 
 module.exports = router;
