@@ -5,6 +5,10 @@ const paymentSchema = Schema({
     name: {
         type: String,
     },
+    location: {
+        type: String,
+        required: true,
+    },
     email: {
         type: String,
     },
@@ -14,26 +18,20 @@ const paymentSchema = Schema({
     name_event: {
         type: String,
     },
+    location: {
+        type: String,
+        required: true,
+    },
     timing: {
-        type: String,
-    },
-    dates: {
         type: Date,
-    },
-    cities: {
-        type: String,
-    },
-    address: {
-        type: String,
+        required: true,
     },
     audiences: {
         type: String,
     },
     duration: {
         type: String,
-    },
-    description: {
-        type: String,
+        required: true,
     },
     createdAt: {
         type: Date,

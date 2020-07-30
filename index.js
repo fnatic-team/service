@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/user', require('./routes/user/index'));
 app.use('/api/tansaksi', require('./routes/payment'));
+app.use('/api/admin', require('./routes/admins'));
 
 if (db) {
     app.listen(PORT, () => {
