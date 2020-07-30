@@ -11,24 +11,29 @@ const paymentSchema = Schema({
     phone: {
         type: String,
     },
-    event: {
+    name_event: {
         type: String,
-        default: 'admin',
-    },
-    location: {
-        type: String,
-        required: true,
     },
     timing: {
+        type: String,
+    },
+    dates: {
         type: Date,
-        required,
+    },
+    cities: {
+        type: String,
+    },
+    address: {
+        type: String,
     },
     audiences: {
         type: String,
     },
     duration: {
         type: String,
-        required,
+    },
+    description: {
+        type: String,
     },
     createdAt: {
         type: Date,
