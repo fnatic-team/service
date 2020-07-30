@@ -17,9 +17,9 @@ app.get('/', (req, res) => {
     res.render('pages/home');
 });
 
-app.use('/api/user', require('./routes/user'));
+app.use('/api/user', require('./routes/user/index'));
+app.use('/api/transaksi', require('./routes/payment'));
 app.use('/api/admin', require('./routes/admins'));
-// app.use('api/speaker', require('./routes/speakers'));
 
 if (db) {
     app.listen(PORT, () => {
