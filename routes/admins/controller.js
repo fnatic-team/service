@@ -5,7 +5,7 @@ const { createToken } = require('../../helpers/token');
 
 module.exports = {
     addAdmin: async (req, res) => {
-        const { username, password, role} = req.body;
+        const { fullname, username, password, role, image_url} = req.body;
 
         try {
             const checkedAdmin = await Admin.findOne({ username });
@@ -19,9 +19,11 @@ module.exports = {
             const hashedPassword = await hashPassword(password);
 
             await Admin.create({
+                fullname,
                 username,
                 password: hashedPassword,
                 role,
+                image_url,
             });
 
             res.send({
