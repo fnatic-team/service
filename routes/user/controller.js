@@ -141,13 +141,51 @@ module.exports = {
     },
     filterByName: async (req, res) => {
         const user = req.query.user;
-        console.log(user);
         try {
             const result = await User.find({
                 name: {
                     $regex: user,
                     $options: 'i',
                 },
+            });
+
+            res.send(result);
+        } catch (error) {
+            res.send(error);
+        }
+    },
+
+    filterByLocation: async (req, res) => {
+        const location = req.query.location;
+        try {
+            const result = await User.find({
+                location: {
+                    $regex: location,
+                    $options: 'i',
+                },
+            });
+
+            res.send(result);
+        } catch (error) {
+            res.send(error);
+        }
+    },
+
+    getActiveSpeaker: async (req, res) => {
+        try {
+            const result = await User.find({
+                status: 'approve',
+            });
+
+            res.send(result);
+        } catch (error) {
+            res.send(error);
+        }
+    },
+    getInActiveSpeaker: async (req, res) => {
+        try {
+            const result = await User.find({
+                status: 'reject',
             });
 
             res.send(result);
