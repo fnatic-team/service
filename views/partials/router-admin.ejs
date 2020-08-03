@@ -1,0 +1,65 @@
+<tr>
+    <th scope="row">1.</th>
+    <td>Tambah Admin</td>
+    <td>ADMIN</td>
+    <td>-</td>
+    <td>ADMIN</td>
+    <td>POST</td>
+    <td>/api/admin/add/:roles</td>
+    <td>
+        {fullname:"Admin", username: "admin", password: "123", role: "admin",
+        image_url: "linkUrl"}
+    </td>
+</tr>
+<tr>
+    <th scope="row">2.</th>
+    <td>Login</td>
+    <td>ADMIN</td>
+    <td>-</td>
+    <td>ADMIN</td>
+    <td>POST</td>
+    <td>/api/admin/login</td>
+    <td>
+        {username: "admin", password: "123",}
+    </td>
+</tr>
+<tr>
+    <th scope="row">3.</th>
+    <td>Tampilkan Semua Data Admin</td>
+    <td>ADMIN</td>
+    <td>Token</td>
+    <td>ADMIN</td>
+    <td>GET</td>
+    <td>/api/admin/getAllAdmin</td>
+    <td>
+        Array of Object[{ }]
+    </td>
+</tr>
+<tr>
+    <th scope="row">4.</th>
+    <td>Update data Admin</td>
+    <td>ADMIN</td>
+    <td>Token</td>
+    <td>ADMIN</td>
+    <td>PUT</td>
+    <td>/api/admin/:id</td>
+    <td>
+        {fullname:"Admin", username: "admin", password: "123", role: "admin",
+        image_url: "linkUrl"}
+    </td>
+</tr>
+<tr>
+    <th scope="row">5.</th>
+    <td>Hapus Data Admin</td>
+    <td>ADMIN</td>
+    <td>Token</td>
+    <td>ADMIN</td>
+    <td>DELETE</td>
+    <td>/api/admin/:id</td>
+    <td>
+        {api/admin/123}
+    </td>
+</tr>
+<tr>
+    <th class="bg-info" scope="row" colspan="8"></th>
+</tr>

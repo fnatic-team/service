@@ -1,0 +1,147 @@
+<tr>
+    <th scope="row">1.</th>
+    <td>Login</td>
+    <td>USER</td>
+    <td>-</td>
+    <td>CLIENT</td>
+    <td>POST</td>
+    <td>/api/user/login</td>
+    <td>
+        {email: "abc@gmail.com", password: "123"}
+    </td>
+</tr>
+<tr>
+    <th scope="row">2.</th>
+    <td>Tampilkan Semua Data User</td>
+    <td>USER</td>
+    <td>Token</td>
+    <td>ADMIN</td>
+    <td>GET</td>
+    <td>/api/user/allUser</td>
+    <td>
+        Array of Object[{ }]
+    </td>
+</tr>
+<tr>
+    <th scope="row">3.</th>
+    <td>Tampilkan Semua Data Audiance</td>
+    <td>AUDIENCE</td>
+    <td>Token</td>
+    <td>ADMIN</td>
+    <td>GET</td>
+    <td>/api/user/audience</td>
+    <td>
+        Array of Object[{ }]
+    </td>
+</tr>
+<tr>
+    <th scope="row">4.</th>
+    <td>Tampilkan Semua Data Speaker</td>
+    <td>SPEAKER</td>
+    <td>Token</td>
+    <td>ADMIN</td>
+    <td>GET</td>
+    <td>/api/user/speaker</td>
+    <td>
+        Array of Object[{ }]
+    </td>
+</tr>
+<tr>
+    <th scope="row">5.</th>
+    <td>Pilih Data User by Id</td>
+    <td>USER</td>
+    <td>Token</td>
+    <td>CLIENT</td>
+    <td>GET</td>
+    <td>/api/user/userId/:id</td>
+    <td>
+        {api/user/userId/123}
+    </td>
+</tr>
+<tr>
+    <th scope="row">6.</th>
+    <td>Search Speaker by category</td>
+    <td>SPEAKER</td>
+    <td>-</td>
+    <td>CLIENT</td>
+    <td>GET</td>
+    <td>/api/user/category/</td>
+    <td>
+        {api/user/category/?category=abc}
+    </td>
+</tr>
+<tr>
+    <th scope="row">7.</th>
+    <td>Search User by Name</td>
+    <td>USER</td>
+    <td>-</td>
+    <td>CLIENT</td>
+    <td>GET</td>
+    <td>/api/user/name/</td>
+    <td>
+        {api/user/name/?name=abc}
+    </td>
+</tr>
+<tr>
+    <th scope="row">8.</th>
+    <td>Search Speaker by location</td>
+    <td>SPEAKER</td>
+    <td>-</td>
+    <td>CLIENT</td>
+    <td>GET</td>
+    <td>/api/user/location/</td>
+    <td>
+        {api/user/location/?location=abc}
+    </td>
+</tr>
+<tr>
+    <th scope="row">9.</th>
+    <td>Tampilkan Semua Active Speaker</td>
+    <td>SPEAKER</td>
+    <td>-</td>
+    <td>CLIENT</td>
+    <td>GET</td>
+    <td>/api/user/activeSpeaker</td>
+    <td>
+        Array of Object[{ }]
+    </td>
+</tr>
+<tr>
+    <th scope="row">10.</th>
+    <td>Tampilkan Semua Non active Speaker</td>
+    <td>SPEAKER</td>
+    <td>Token</td>
+    <td>ADMIN</td>
+    <td>GET</td>
+    <td>/api/user/:InActiveSpeaker</td>
+    <td>
+        Array of Object[{ }]
+    </td>
+</tr>
+<tr>
+    <th scope="row">11.</th>
+    <td>Update Data User</td>
+    <td>SPEAKER</td>
+    <td>Token</td>
+    <td>CLIENT</td>
+    <td>PUT</td>
+    <td>/api/user/:id</td>
+    <td>
+        routes: api/user/123 {bio:'abc', 'location':'abc', fee:'abc'}
+    </td>
+</tr>
+<tr>
+    <th scope="row">12.</th>
+    <td>Hapus Data User</td>
+    <td>SPEAKER</td>
+    <td>Token</td>
+    <td>ADMIN</td>
+    <td>DELETE</td>
+    <td>/api/user/:id</td>
+    <td>
+        {api/user/123}
+    </td>
+</tr>
+<tr>
+    <th class="bg-info" scope="row" colspan="8"></th>
+</tr>

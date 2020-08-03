@@ -1,11 +1,11 @@
 const User = require('./User');
 const Admin = require('./Admin');
-const Payment = require('./Payment');
+const Transaction = require('./Transaction');
 const Newsletter = require('./Newsletter');
 
 module.exports = {
-    // User,
+    User,
     Admin,
-    Payment,
+    Transaction,
     Newsletter,
 };
