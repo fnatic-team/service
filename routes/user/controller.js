@@ -10,6 +10,8 @@ module.exports = {
 
             if (req.body.category !== undefined) {
                 req.body.role = 'speaker';
+            } else {
+                req.body.status = 'active';
             }
 
             if (checkedUser) {
@@ -116,6 +118,8 @@ module.exports = {
         const category = req.query.category;
         try {
             const result = await User.find({
+                role: 'speaker',
+                status: 'approve',
                 category: {
                     $regex: category,
                     $options: 'i',
@@ -143,6 +147,8 @@ module.exports = {
         const user = req.query.user;
         try {
             const result = await User.find({
+                role: 'speaker',
+                status: 'approve',
                 name: {
                     $regex: user,
                     $options: 'i',
@@ -159,6 +165,8 @@ module.exports = {
         const location = req.query.location;
         try {
             const result = await User.find({
+                role: 'speaker',
+                status: 'approve',
                 location: {
                     $regex: location,
                     $options: 'i',
@@ -187,7 +195,7 @@ module.exports = {
         try {
             const result = await User.find({
                 role: 'speaker',
-                status: 'reject',
+                status: 'inactive',
             });
 
             res.send(result);
