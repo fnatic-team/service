@@ -1,0 +1,64 @@
+<tr>
+    <th scope="row">1.</th>
+    <td>Tambah Transaksi</td>
+    <td>CLIENT</td>
+    <td>-</td>
+    <td>CLIENT</td>
+    <td>POST</td>
+    <td>/api/transaksi/addtransaction</td>
+    <td>
+        {nama_acara:"pengenalan reactjs", waktu_acara: "19:00", tanggal_acara:
+        "2020-08-09", kota: "jakarta", alamat: "jl. pegangsaan timur",
+        jml_peserta: "300", durasi: "5", deskripsi: "react adalah salah satu
+        ..", status_speaker: "pending", status_audience: "next" }
+    </td>
+</tr>
+<tr>
+    <th scope="row">2.</th>
+    <td>Tampilkan Semua Data Transaksi</td>
+    <td>ADMIN</td>
+    <td>Token</td>
+    <td>ADMIN / CLIENT</td>
+    <td>GET</td>
+    <td>/api/transaksi/alltrans</td>
+    <td>
+        Array of Object[{ }]
+    </td>
+</tr>
+<tr>
+    <th scope="row">3.</th>
+    <td>Update data Transaksi</td>
+    <td>ADMIN</td>
+    <td>Token</td>
+    <td>ADMIN</td>
+    <td>PUT</td>
+    <td>/api/transaksi/update/:id</td>
+    <td>
+        {name:"audience", email: "audience@gmail.com", phone: "897", image_url:
+        "linkUrl"}
+    </td>
+</tr>
+<tr>
+    <th scope="row">4.</th>
+    <td>Hapus Data Transaksi</td>
+    <td>ADMIN</td>
+    <td>Token</td>
+    <td>ADMIN</td>
+    <td>DELETE</td>
+    <td>/api/transaksi/delete/:id</td>
+    <td>
+        {api/admin/123}
+    </td>
+</tr>
+<tr>
+    <th scope="row">5.</th>
+    <td>Search Transaksi by Name</td>
+    <td>ADMIN/CLIENT</td>
+    <td>Token</td>
+    <td>CLIENT</td>
+    <td>GET</td>
+    <td>/api/transaksi/nam/</td>
+    <td>
+        {api/transaksi/name/?name=abc}
+    </td>
+</tr>

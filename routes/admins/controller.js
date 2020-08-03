@@ -1,16 +1,15 @@
-const { Admin} = require('../../models');
+const { Admin } = require('../../models');
 const { hashPassword } = require('../../helpers');
 const bcrypt = require('bcryptjs');
 const { createToken } = require('../../helpers/token');
 
 module.exports = {
     addAdmin: async (req, res) => {
-        const { fullname, username, password, role, image_url} = req.body;
-const roles = req.params.roles;
+        const { fullname, username, password, role, image_url } = req.body;
+        const roles = req.params.roles;
         try {
-            if(roles === 'super admin') {
-
-            console.log(roles);
+            if (roles === 'superadmin') {
+                console.log(roles);
                 const checkedAdmin = await Admin.findOne({ username });
 
                 if (checkedAdmin) {
@@ -18,9 +17,9 @@ const roles = req.params.roles;
                         message: `Username is already registered`,
                     });
                 }
-    
+
                 const hashedPassword = await hashPassword(password);
-    
+
                 await Admin.create({
                     fullname,
                     username,
@@ -28,11 +27,11 @@ const roles = req.params.roles;
                     role,
                     image_url,
                 });
-    
+
                 res.send({
                     message: `Add admin success`,
                 });
-            }else {
+            } else {
                 res.send(`you are not super admin`);
             }
         } catch (error) {
@@ -75,7 +74,7 @@ const roles = req.params.roles;
                     return res.send(`username or password is wrong`);
                 }
             });
-        }else {
+        } else {
             res.send(`username is not registered`);
         }
     },
@@ -94,7 +93,7 @@ const roles = req.params.roles;
             res.send(error);
         }
     },
-    deleteAdmin: async (req, res) =>{
+    deleteAdmin: async (req, res) => {
         const id = req.params.id;
         try {
             await Admin.findByIdAndDelete(id);
@@ -103,5 +102,5 @@ const roles = req.params.roles;
         } catch (error) {
             res.send(error);
         }
-    }
-}
+    },
+};
