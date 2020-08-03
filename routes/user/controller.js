@@ -52,13 +52,13 @@ module.exports = {
                                 name: registeredUser.name,
                                 email: registeredUser.email,
                                 role: registeredUser.role,
+                                status: registeredUser.status,
                             };
 
                             const token = createToken(userData);
                             res.send({
                                 message: `Login Succesfull`,
                                 token,
-                                userData,
                             });
                         } else {
                             return res.send(`Your email or password is wrong`);
