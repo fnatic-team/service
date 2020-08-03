@@ -10,6 +10,8 @@ module.exports = {
 
             if (req.body.category !== undefined) {
                 req.body.role = 'speaker';
+            } else {
+                req.body.status = 'active';
             }
 
             if (checkedUser) {
@@ -50,13 +52,13 @@ module.exports = {
                                 name: registeredUser.name,
                                 email: registeredUser.email,
                                 role: registeredUser.role,
+                                status: registeredUser.status,
                             };
 
                             const token = createToken(userData);
                             res.send({
                                 message: `Login Succesfull`,
                                 token,
-                                userData,
                             });
                         } else {
                             return res.send(`Your email or password is wrong`);
@@ -116,6 +118,8 @@ module.exports = {
         const category = req.query.category;
         try {
             const result = await User.find({
+                role: 'speaker',
+                status: 'approve',
                 category: {
                     $regex: category,
                     $options: 'i',
@@ -139,7 +143,24 @@ module.exports = {
             console.log(error);
         }
     },
-    filterByName: async (req, res) => {
+    filterSpeakerByName: async (req, res) => {
+        const user = req.query.user;
+        try {
+            const result = await User.find({
+                role: 'speaker',
+                status: 'approve',
+                name: {
+                    $regex: user,
+                    $options: 'i',
+                },
+            });
+
+            res.send(result);
+        } catch (error) {
+            res.send(error);
+        }
+    },
+    filterUserByName: async (req, res) => {
         const user = req.query.user;
         try {
             const result = await User.find({
@@ -159,6 +180,8 @@ module.exports = {
         const location = req.query.location;
         try {
             const result = await User.find({
+                role: 'speaker',
+                status: 'approve',
                 location: {
                     $regex: location,
                     $options: 'i',
@@ -187,7 +210,7 @@ module.exports = {
         try {
             const result = await User.find({
                 role: 'speaker',
-                status: 'reject',
+                status: 'inactive',
             });
 
             res.send(result);

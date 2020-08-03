@@ -11,7 +11,8 @@ const {
     getAllSpeaker,
     getUser,
     filterByCategory,
-    filterByName,
+    filterUserByName,
+    filterSpeakerByName,
     deleteUser,
     filterByLocation,
     getActiveSpeaker,
@@ -26,7 +27,8 @@ router.get('/audience', verifyToken, getAllAudience);
 router.get('/speaker', verifyToken, getAllSpeaker);
 router.get('/userId/:id', verifyToken, getUser);
 router.get('/category/', filterByCategory);
-router.get('/name/', filterByName);
+router.get('/name/', filterUserByName);
+router.get('/speakerName/', filterSpeakerByName);
 router.get('/location/', filterByLocation);
 router.get('/activeSpeaker', getActiveSpeaker);
 router.get('/InActiveSpeaker', verifyToken, getInActiveSpeaker);

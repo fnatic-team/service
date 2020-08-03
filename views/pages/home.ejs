@@ -1,4 +1,263 @@
 
+<<<<<<< HEAD
+        <!-- Bootstrap CSS -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+            crossorigin="anonymous"
+        />
+
+        <title>REST API Narasumber</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <p class="h2 text-center mt-3">Narasumber API</p>
+                    <p class="h6 text-center mb-3">
+                        Dibawah ini adalah list endpoint yang bisa kalian akses
+                    </p>
+                    <table class="table table-hover table-bordered">
+                        <thead class="bg-info text-white">
+                            <tr class="text-center">
+                                <th scope="col">#</th>
+                                <th scope="col">Tujuan</th>
+                                <th scope="col">Method</th>
+                                <th scope="col">Route</th>
+                                <th scope="col">Req format example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1.</th>
+                                <td>Add(Admin)</td>
+                                <td>POST</td>
+                                <td>/api/admin/add/:roles</td>
+                                <td>
+                                    {fullname:"Admin", username: "admin",
+                                    password: "123", role: "admin", image_url:
+                                    "linkUrl"}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2.</th>
+                                <td>Login(Admin)</td>
+                                <td>POST</td>
+                                <td>/api/admin/login</td>
+                                <td>
+                                    {username: "admin", password: "123",}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3.</th>
+                                <td>getAllAdmin(Admin)</td>
+                                <td>GET</td>
+                                <td>/api/admin/getAllAdmin</td>
+                                <td>
+                                    (with token) <br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4.</th>
+                                <td>Delete(Admin)</td>
+                                <td>DELETE</td>
+                                <td>/api/admin/:id</td>
+                                <td>
+                                    (with token) <br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5.</th>
+                                <td>Update(Admin)</td>
+                                <td>PUT</td>
+                                <td>/api/admin/:id</td>
+                                <td>
+                                    (with token) <br />
+                                    {fullname:"Admin", username: "admin",
+                                    password: "123", role: "admin", image_url:
+                                    "linkUrl"}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6.</th>
+                                <td>Registrasi(User)</td>
+                                <td>POST</td>
+                                <td>/api/user/</td>
+                                <td>
+                                    {name:"abc", email: "abc@gmail.com",
+                                    password: "123" , username:'abc' ,
+                                    phone:'123'}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">7.</th>
+                                <td>Login(User)</td>
+                                <td>POST</td>
+                                <td>/api/user/login</td>
+                                <td>
+                                    {email: "abc@gmail.com", password: "123"}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">8.</th>
+                                <td>get All User(User)</td>
+                                <td>GET</td>
+                                <td>/api/user/allUser</td>
+                                <td>
+                                    (with token) <br />
+                                    -
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">9.</th>
+                                <td>get All Audience(User)</td>
+                                <td>GET</td>
+                                <td>/api/user/audience</td>
+                                <td>
+                                    (with token) <br />
+
+                                    -
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">10.</th>
+                                <td>get All Speaker(User)</td>
+                                <td>GET</td>
+                                <td>/api/user/speaker</td>
+                                <td>
+                                    (with token) <br />
+
+                                    -
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">11.</th>
+                                <td>get one User(User)</td>
+                                <td>GET</td>
+                                <td>/api/user/userId/:id</td>
+                                <td>
+                                    (with token) <br />
+
+                                    {api/user/userId/123}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">12.</th>
+                                <td>get Speaker by category(User)</td>
+                                <td>GET</td>
+                                <td>/api/user/category/</td>
+                                <td>
+                                    (with token) <br />
+
+                                    {api/user/category/?category=abc}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">13.</th>
+                                <td>search by Name (User)</td>
+                                <td>GET</td>
+                                <td>/api/user/name/</td>
+                                <td>
+                                    (with token) <br />
+
+                                    {api/user/name/?name=abc}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">14.</th>
+                                <td>get Speaker by location(User)</td>
+                                <td>GET</td>
+                                <td>/api/user/location/</td>
+                                <td>
+                                    (with token) <br />
+
+                                    {api/user/location/?location=abc}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">15.</th>
+                                <td>get active Speaker (User)</td>
+                                <td>GET</td>
+                                <td>/api/user/activeSpeaker</td>
+                                <td>
+                                    (with token) <br />
+                                    -
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">16.</th>
+                                <td>get non active Speaker (User)</td>
+                                <td>GET</td>
+                                <td>/api/user/:InActiveSpeaker</td>
+                                <td>
+                                    (with token) <br />
+                                    -
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">17.</th>
+                                <td>delete User(User)</td>
+                                <td>DELETE</td>
+                                <td>/api/user/:id</td>
+                                <td>
+                                    (with token) <br />
+
+                                    {api/user/123}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">18.</th>
+                                <td>update User data(User)</td>
+                                <td>PUT</td>
+                                <td>/api/user/:id</td>
+                                <td>
+                                    (with token) <br />
+
+                                    routes: api/user/123 {bio:'abc',
+                                    'location':'abc', fee:'abc'}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">19</th>
+                                <td>Add(Newsletter)</td>
+                                <td>POST</td>
+                                <td>/api/newsletter/addnewsletter</td>
+                                <td>
+                                    {email: "newsletter@gmail.com"}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1.</th>
+                                <td>GetAllNewsletter(Newsletter)</td>
+                                <td>GET</td>
+                                <td>/api/newsletter/getallnewsletter</td>
+                                <td>
+                                  -
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1.</th>
+                                <td>Update(Newsletter)</td>
+                                <td>PUT</td>
+                                <td>/api/newsletter/:id</td>
+                                <td>
+                                  -
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1.</th>
+                                <td>Delete(Newsletter)</td>
+                                <td>DELETE</td>
+                                <td>/api/newsletter/:id</td>
+                                <td>
+                                  -
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+=======
 <%- include('../partials/header.ejs') %>
 <body>
     <div class="container md">
@@ -29,6 +288,7 @@
                         include('../partials/router-transaksi.ejs') %>
                     </tbody>
                 </table>
+>>>>>>> 7ac5b431eedd1fdcc892cdfcc3eb1bca9f1e0003
             </div>
         </div>
     </div>
