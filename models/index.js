@@ -1,9 +1,9 @@
 const User = require('./User');
 const Admin = require('./Admin');
-const Payment = require('./Payment');
+const Transaction = require('./Transaction');
 
 module.exports = {
     User,
     Admin,
-    Payment,
+    Transaction,
 };

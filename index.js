@@ -18,8 +18,11 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/user', require('./routes/user/index'));
-app.use('/api/transaksi', require('./routes/payment'));
+app.use('/api/transaksi', require('./routes/transactions'));
 app.use('/api/admin', require('./routes/admins'));
+app.get('*', (req, res) => {
+    res.send('404 Not Found');
+});
 
 if (db) {
     app.listen(PORT, () => {
