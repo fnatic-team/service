@@ -174,6 +174,7 @@ module.exports = {
     getActiveSpeaker: async (req, res) => {
         try {
             const result = await User.find({
+                role: 'speaker',
                 status: 'approve',
             });
 
@@ -185,6 +186,7 @@ module.exports = {
     getInActiveSpeaker: async (req, res) => {
         try {
             const result = await User.find({
+                role: 'speaker',
                 status: 'reject',
             });
 
