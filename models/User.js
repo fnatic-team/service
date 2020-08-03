@@ -24,14 +24,14 @@ const userSchema = Schema({
     },
     role: {
         type: String,
-        default: 'audience',
+        default: 'AUDIENCE',
     },
     category: {
         type: String,
     },
     status: {
         type: String,
-        default: 'pending',
+        default: 'PENDING',
     },
     bio: {
         type: String,
