@@ -20,6 +20,7 @@ app.get('/', (req, res) => {
 app.use('/api/user', require('./routes/user/index'));
 app.use('/api/transaksi', require('./routes/transactions'));
 app.use('/api/admin', require('./routes/admins'));
+app.use('/api/newsletter', require('./routes/newsletter'));
 app.get('*', (req, res) => {
     res.send('404 Not Found');
 });
