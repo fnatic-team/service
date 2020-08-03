@@ -1,12 +1,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const paymentSchema = Schema({
+const transactionSchema = Schema({
     name: {
         type: String,
         ref: 'users',
     },
-    UserID: {
+    audienceID: {
+        type: Schema.Types.ObjectId,
+        ref: 'users',
+    },
+    speakerID: {
         type: Schema.Types.ObjectId,
         ref: 'users',
     },
@@ -37,15 +41,26 @@ const paymentSchema = Schema({
         required: true,
     },
     jml_peserta: {
-        type: String,
+        type: Number,
     },
     durasi: {
-        type: String,
+        type: Number,
         required: true,
     },
     deskripsi: {
         type: String,
         required: true,
+    },
+    bukti_transaksi: {
+        type: String,
+    },
+    status_speaker: {
+        type: String,
+        default: 'pending',
+    },
+    status_audience: {
+        type: String,
+        default: 'pending',
     },
     createdAt: {
         type: Date,
@@ -57,6 +72,6 @@ const paymentSchema = Schema({
     },
 });
 
-const Payment = mongoose.model(`payments`, paymentSchema);
+const Transaction = mongoose.model(`transactions`, transactionSchema);
 
-module.exports = Payment;
+module.exports = Transaction;

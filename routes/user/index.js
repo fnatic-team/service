@@ -25,10 +25,10 @@ router.get('/allUser', verifyToken, getAllUser);
 router.get('/audience', verifyToken, getAllAudience);
 router.get('/speaker', verifyToken, getAllSpeaker);
 router.get('/userId/:id', verifyToken, getUser);
-router.get('/category/', verifyToken, filterByCategory);
-router.get('/name/', verifyToken, filterByName);
-router.get('/location/', verifyToken, filterByLocation);
-router.get('/activeSpeaker', verifyToken, getActiveSpeaker);
+router.get('/category/', filterByCategory);
+router.get('/name/', filterByName);
+router.get('/location/', filterByLocation);
+router.get('/activeSpeaker', getActiveSpeaker);
 router.get('/InActiveSpeaker', verifyToken, getInActiveSpeaker);
 router.delete('/:id', verifyToken, deleteUser);
 
