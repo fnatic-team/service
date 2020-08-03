@@ -15,12 +15,27 @@ module.exports= {
     getAllNewsletter: async (req, res) => {
         try {
             const result = await Newsletter.find();
-
             res.send(result);
         } catch (error) {
             res.send(error);
         }
     },
+    updateNewsletter: async (req, res) => {
+        const id = req.params.id;
+        try {
+            const result = await Newsletter.findByIdAndUpdate(
+                { _id: id },
+                {
+                    ...req.body,
+                }
+            );
+
+            res.send({ message: 'Update succes', data: result });
+        } catch (error) {
+            res.send(error);
+        }
+    },
+
     deleteNewsletter: async (req, res) =>{
         const { id } = req.params;
         try {
