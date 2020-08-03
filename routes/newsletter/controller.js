@@ -21,5 +21,17 @@ module.exports= {
             res.send(error);
         }
     },
+    deleteNewsletter: async (req, res) =>{
+        const { id } = req.params;
+        try {
+            await Newsletter.deleteOne({
+                _id:id,
+            });
+
+            res.send({ message: 'deleted succes' });
+        } catch (error) {
+            res.send(error);
+        }
+    }
 
 };
