@@ -143,12 +143,27 @@ module.exports = {
             console.log(error);
         }
     },
-    filterByName: async (req, res) => {
+    filterSpeakerByName: async (req, res) => {
         const user = req.query.user;
         try {
             const result = await User.find({
                 role: 'speaker',
                 status: 'approve',
+                name: {
+                    $regex: user,
+                    $options: 'i',
+                },
+            });
+
+            res.send(result);
+        } catch (error) {
+            res.send(error);
+        }
+    },
+    filterUserByName: async (req, res) => {
+        const user = req.query.user;
+        try {
+            const result = await User.find({
                 name: {
                     $regex: user,
                     $options: 'i',

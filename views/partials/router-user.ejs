@@ -1,5 +1,17 @@
 <tr>
     <th scope="row">1.</th>
+    <td>Register</td>
+    <td>USER</td>
+    <td>-</td>
+    <td>CLIENT</td>
+    <td>POST</td>
+    <td>/api/user/</td>
+    <td>
+        {name:'abc', username:'abc' , email: "abc@gmail.com", password: "123"}
+    </td>
+</tr>
+<tr>
+    <th scope="row">2.</th>
     <td>Login</td>
     <td>USER</td>
     <td>-</td>
@@ -11,7 +23,7 @@
     </td>
 </tr>
 <tr>
-    <th scope="row">2.</th>
+    <th scope="row">3.</th>
     <td>Tampilkan Semua Data User</td>
     <td>USER</td>
     <td>Token</td>
@@ -23,7 +35,7 @@
     </td>
 </tr>
 <tr>
-    <th scope="row">3.</th>
+    <th scope="row">4.</th>
     <td>Tampilkan Semua Data Audiance</td>
     <td>AUDIENCE</td>
     <td>Token</td>
@@ -35,7 +47,7 @@
     </td>
 </tr>
 <tr>
-    <th scope="row">4.</th>
+    <th scope="row">5.</th>
     <td>Tampilkan Semua Data Speaker</td>
     <td>SPEAKER</td>
     <td>Token</td>
@@ -47,7 +59,7 @@
     </td>
 </tr>
 <tr>
-    <th scope="row">5.</th>
+    <th scope="row">6.</th>
     <td>Pilih Data User by Id</td>
     <td>USER</td>
     <td>Token</td>
@@ -59,7 +71,7 @@
     </td>
 </tr>
 <tr>
-    <th scope="row">6.</th>
+    <th scope="row">7.</th>
     <td>Search Speaker by category</td>
     <td>SPEAKER</td>
     <td>-</td>
@@ -71,11 +83,11 @@
     </td>
 </tr>
 <tr>
-    <th scope="row">7.</th>
+    <th scope="row">8.</th>
     <td>Search User by Name</td>
     <td>USER</td>
     <td>-</td>
-    <td>CLIENT</td>
+    <td>ADMIN</td>
     <td>GET</td>
     <td>/api/user/name/</td>
     <td>
@@ -83,7 +95,19 @@
     </td>
 </tr>
 <tr>
-    <th scope="row">8.</th>
+    <th scope="row">9.</th>
+    <td>Search Speaker by Name</td>
+    <td>SPEAKER/td></td>
+    <td>-</td>
+    <td>CLIENT</td>
+    <td>GET</td>
+    <td>/api/user/speakerName/</td>
+    <td>
+        {api/user/speakerName/?name=abc}
+    </td>
+</tr>
+<tr>
+    <th scope="row">10.</th>
     <td>Search Speaker by location</td>
     <td>SPEAKER</td>
     <td>-</td>
@@ -95,7 +119,7 @@
     </td>
 </tr>
 <tr>
-    <th scope="row">9.</th>
+    <th scope="row">11.</th>
     <td>Tampilkan Semua Active Speaker</td>
     <td>SPEAKER</td>
     <td>-</td>
@@ -107,7 +131,7 @@
     </td>
 </tr>
 <tr>
-    <th scope="row">10.</th>
+    <th scope="row">12.</th>
     <td>Tampilkan Semua Non active Speaker</td>
     <td>SPEAKER</td>
     <td>Token</td>
@@ -119,9 +143,9 @@
     </td>
 </tr>
 <tr>
-    <th scope="row">11.</th>
+    <th scope="row">13.</th>
     <td>Update Data User</td>
-    <td>SPEAKER</td>
+    <td>USER</td>
     <td>Token</td>
     <td>CLIENT</td>
     <td>PUT</td>
@@ -131,9 +155,9 @@
     </td>
 </tr>
 <tr>
-    <th scope="row">12.</th>
+    <th scope="row">14.</th>
     <td>Hapus Data User</td>
-    <td>SPEAKER</td>
+    <td>USER</td>
     <td>Token</td>
     <td>ADMIN</td>
     <td>DELETE</td>
