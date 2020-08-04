@@ -17,7 +17,7 @@ const adminSchema = Schema({
     },
     role: {
         type: String,
-        default: 'admin',
+        default: 'ADMIN',
     },
     image_url: {
         type: String,
