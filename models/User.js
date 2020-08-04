@@ -38,6 +38,8 @@ const userSchema = Schema({
     },
     image: {
         type: String,
+        default:
+            'https://cdn.iconscout.com/icon/free/png-512/avatar-372-456324.png',
     },
     language: {
         type: String,
