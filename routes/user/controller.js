@@ -10,7 +10,10 @@ module.exports = {
 
             if (req.body.category !== undefined) {
                 req.body.role = 'SPEAKER';
-            } else {
+            } else if (
+                req.body.category === undefined &&
+                req.body.status === undefined
+            ) {
                 req.body.status = 'ACTIVE';
             }
 
@@ -129,7 +132,6 @@ module.exports = {
             res.send(result);
         } catch (error) {
             res.send(error);
-            console.log(error);
         }
     },
     getUser: async (req, res) => {
@@ -140,7 +142,16 @@ module.exports = {
             res.send(result);
         } catch (error) {
             res.send(error);
-            console.log(error);
+        }
+    },
+    getSpeaker: async (req, res) => {
+        const id = req.params.id;
+        try {
+            const result = await User.findById({ _id: id, role: 'SPEAKER' });
+
+            res.send(result);
+        } catch (error) {
+            res.send(error);
         }
     },
     filterSpeakerByName: async (req, res) => {
