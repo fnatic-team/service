@@ -1,4 +1,5 @@
-const { Admin } = require('../../models');
+const { Admin, User } = require('../../models');
+
 const { hashPassword } = require('../../helpers');
 const bcrypt = require('bcryptjs');
 const { createToken } = require('../../helpers/token');
@@ -99,6 +100,121 @@ module.exports = {
             await Admin.findByIdAndDelete(id);
 
             res.send({ message: 'deleted succes' });
+        } catch (error) {
+            res.send(error);
+        }
+    },
+    getAllSpeakerActive:async (req, res) => {
+        try {
+            const result = await User.find({
+            });
+
+            const speakerActive = await User.countDocuments({
+                role: "SPEAKER",
+                status: "ACTIVE",
+            });
+            res.send({
+                message: "Get All datas Summary",
+                data: [
+                    {
+                        role: "SPEAKER",
+                        status: "ACTIVE",
+                        count: speakerActive,
+                    }]
+                });
+        } catch (error) {
+            res.send(error);
+        }
+    },
+
+    getAllSpeakerUnverified:async (req, res) => {
+        try {
+            const result = await User.find({
+            });
+
+            const speakerPending = await User.countDocuments({
+                role: "SPEAKER",
+                status: "PENDING",
+            });
+            res.send({
+                message: "Get All datas Summary",
+                data: [
+                    {
+                        role: "SPEAKER",
+                        status: "PENDING",
+                        count: speakerPending,
+                    }]
+                });
+        } catch (error) {
+            res.send(error);
+        }
+    },
+    
+    getAllSpeakerInactive: async (req, res) => {
+        try {
+            const result = await User.find({
+            });
+
+            const speakerInactive = await User.countDocuments({
+                role: "SPEAKER",
+                status: "INACTIVE",
+            });
+            res.send({
+                message: "Get All datas Summary",
+                data: [
+                    {
+                        role: "SPEAKER",
+                        status: "INACTIVE",
+                        count: speakerInactive,
+                    }]
+                });
+        } catch (error) {
+            res.send(error);
+        }
+    },
+    
+    getAllAudienceActive: async (req, res) => {
+        try {
+            const result = await User.find({
+            });
+
+            const audienceActive = await User.countDocuments({
+                role: "AUDIENCE",
+                status: "ACTIVE",
+            });
+            res.send({
+                message: "Get All datas Summary",
+                data: [
+                    {
+                        role: "AUDIENCE",
+                        status: "ACTIVE",
+                        count: audienceActive,
+                    }]
+                });
+        } catch (error) {
+            res.send(error);
+        }
+    },
+    
+    
+    getAllAudienceInactive: async (req, res) => {
+        try {
+            const result = await User.find({
+            });
+
+            const audienceInactive = await User.countDocuments({
+                role: "AUDIENCE",
+                status: "INACTIVE",
+            });
+            res.send({
+                message: "Get All datas Summary",
+                data: [
+                    {
+                        role: "AUDIENCE",
+                        status: "INACTIVE",
+                        count: audienceInactive,
+                    }]
+                });
         } catch (error) {
             res.send(error);
         }
