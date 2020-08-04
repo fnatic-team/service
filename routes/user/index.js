@@ -17,6 +17,7 @@ const {
     filterByLocation,
     getActiveSpeaker,
     getInActiveSpeaker,
+    getSpeaker,
 } = require('./controller');
 
 router.post('/', Registration);
@@ -31,6 +32,7 @@ router.get('/name/', filterUserByName);
 router.get('/speakerName/', filterSpeakerByName);
 router.get('/location/', filterByLocation);
 router.get('/activeSpeaker', getActiveSpeaker);
+router.get('/activeSpeaker/:id', getSpeaker);
 router.get('/InActiveSpeaker', verifyToken, getInActiveSpeaker);
 router.delete('/:id', verifyToken, deleteUser);
 
