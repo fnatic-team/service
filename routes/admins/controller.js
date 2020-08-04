@@ -8,7 +8,7 @@ module.exports = {
         const { fullname, username, password, role, image_url } = req.body;
         const roles = req.params.roles;
         try {
-            if (roles === 'superadmin') {
+            if (roles === 'SUPERADMIN') {
                 console.log(roles);
                 const checkedAdmin = await Admin.findOne({ username });
 
