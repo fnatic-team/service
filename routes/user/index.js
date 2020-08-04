@@ -18,11 +18,14 @@ const {
     getActiveSpeaker,
     getInActiveSpeaker,
     getSpeaker,
+    getPendingSpeaker,
+    updateUserAdmin,
 } = require('./controller');
 
 router.post('/', Registration);
 router.post('/login', userLogin);
 router.put('/:id', verifyToken, updateProfil);
+router.put('/editAdmin/:id', verifyToken, updateUserAdmin);
 router.get('/allUser', verifyToken, getAllUser);
 router.get('/audience', verifyToken, getAllAudience);
 router.get('/speaker', verifyToken, getAllSpeaker);
@@ -33,6 +36,7 @@ router.get('/speakerName/', filterSpeakerByName);
 router.get('/location/', filterByLocation);
 router.get('/activeSpeaker', getActiveSpeaker);
 router.get('/activeSpeaker/:id', getSpeaker);
+router.get('/pendingSpeaker', verifyToken, getPendingSpeaker);
 router.get('/InActiveSpeaker', verifyToken, getInActiveSpeaker);
 router.delete('/:id', verifyToken, deleteUser);
 
