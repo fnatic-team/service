@@ -56,11 +56,15 @@ const transactionSchema = Schema({
     },
     status_speaker: {
         type: String,
-        default: 'pending',
+        default: 'PENDING',
     },
     status_audience: {
         type: String,
-        default: 'pending',
+        default: 'PENDING',
+    },
+    status_transaksi: {
+        type: String,
+        default: 'PENDING',
     },
     createdAt: {
         type: Date,
