@@ -9,9 +9,9 @@ module.exports = {
             const checkedUser = await User.findOne({ email: req.body.email });
 
             if (req.body.category !== undefined) {
-                req.body.role = 'speaker';
+                req.body.role = 'SPEAKER';
             } else {
-                req.body.status = 'active';
+                req.body.status = 'ACTIVE';
             }
 
             if (checkedUser) {
@@ -98,7 +98,7 @@ module.exports = {
     },
     getAllAudience: async (req, res) => {
         try {
-            const result = await User.find({ role: 'audience' });
+            const result = await User.find({ role: 'AUDIENCE' });
 
             res.send(result);
         } catch (error) {
@@ -107,7 +107,7 @@ module.exports = {
     },
     getAllSpeaker: async (req, res) => {
         try {
-            const result = await User.find({ role: 'speaker' });
+            const result = await User.find({ role: 'SPEAKER' });
 
             res.send(result);
         } catch (error) {
@@ -118,8 +118,8 @@ module.exports = {
         const category = req.query.category;
         try {
             const result = await User.find({
-                role: 'speaker',
-                status: 'approve',
+                role: 'SPEAKER',
+                status: 'ACTIVE',
                 category: {
                     $regex: category,
                     $options: 'i',
@@ -147,8 +147,8 @@ module.exports = {
         const user = req.query.user;
         try {
             const result = await User.find({
-                role: 'speaker',
-                status: 'approve',
+                role: 'SPEAKER',
+                status: 'ACTIVE',
                 name: {
                     $regex: user,
                     $options: 'i',
@@ -180,8 +180,8 @@ module.exports = {
         const location = req.query.location;
         try {
             const result = await User.find({
-                role: 'speaker',
-                status: 'approve',
+                role: 'SPEAKER',
+                status: 'ACTIVE',
                 location: {
                     $regex: location,
                     $options: 'i',
@@ -197,8 +197,8 @@ module.exports = {
     getActiveSpeaker: async (req, res) => {
         try {
             const result = await User.find({
-                role: 'speaker',
-                status: 'approve',
+                role: 'SPEAKER',
+                status: 'ACTIVE',
             });
 
             res.send(result);
@@ -209,8 +209,8 @@ module.exports = {
     getInActiveSpeaker: async (req, res) => {
         try {
             const result = await User.find({
-                role: 'speaker',
-                status: 'inactive',
+                role: 'SPEAKER',
+                status: 'INACTIVE',
             });
 
             res.send(result);
