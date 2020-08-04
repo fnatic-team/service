@@ -21,6 +21,7 @@ app.use('/api/user', require('./routes/user/index'));
 app.use('/api/transaksi', require('./routes/transactions'));
 app.use('/api/admin', require('./routes/admins'));
 app.use('/api/newsletter', require('./routes/newsletter'));
+app.use('/api/contact', require('./routes/contact'));
 app.get('*', (req, res) => {
     res.send('404 Not Found');
 });
