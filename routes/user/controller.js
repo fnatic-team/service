@@ -266,4 +266,30 @@ module.exports = {
             res.send(error);
         }
     },
+    getCategory: async (req, res) => {
+        let data = [];
+        try {
+            const result = await User.find();
+
+            for (let i = 0; i < result.length; i++) {
+                if (result[i].category) {
+                    const total = await User.countDocuments({
+                        category: result[i].category,
+                    });
+
+                    const item = {
+                        total: total,
+                        name: result[i].category,
+                    };
+                    data.push(item);
+                    // await data.save();
+                    console.log(data);
+                }
+            }
+
+            // console.log(data.length);
+        } catch (error) {
+            res.send(error);
+        }
+    },
 };

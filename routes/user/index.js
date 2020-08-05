@@ -20,6 +20,7 @@ const {
     getSpeaker,
     getPendingSpeaker,
     updateUserAdmin,
+    getCategory,
 } = require('./controller');
 
 router.post('/', Registration);
@@ -38,6 +39,7 @@ router.get('/activeSpeaker', getActiveSpeaker);
 router.get('/activeSpeaker/:id', getSpeaker);
 router.get('/pendingSpeaker', verifyToken, getPendingSpeaker);
 router.get('/InActiveSpeaker', verifyToken, getInActiveSpeaker);
+router.get('/allcategory', getCategory);
 router.delete('/:id', verifyToken, deleteUser);
 
 module.exports = router;
