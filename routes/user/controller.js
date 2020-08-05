@@ -90,6 +90,22 @@ module.exports = {
             res.send(error);
         }
     },
+    updateUserAdmin: async (req, res) => {
+        const id = req.params.id;
+
+        try {
+            const result = await User.findByIdAndUpdate(
+                { _id: id },
+                {
+                    ...req.body,
+                }
+            );
+
+            res.send({ message: 'success update profil', data: result });
+        } catch (error) {
+            res.send(error);
+        }
+    },
     getAllUser: async (req, res) => {
         try {
             const result = await User.find();
@@ -224,6 +240,17 @@ module.exports = {
                 status: 'INACTIVE',
             });
 
+            res.send(result);
+        } catch (error) {
+            res.send(error);
+        }
+    },
+    getPendingSpeaker: async (req, res) => {
+        try {
+            const result = await User.find({
+                role: 'SPEAKER',
+                status: 'PENDING',
+            });
             res.send(result);
         } catch (error) {
             res.send(error);
