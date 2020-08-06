@@ -64,7 +64,7 @@ const transactionSchema = Schema({
     },
     status_transaksi: {
         type: String,
-        default: 'PENDING',
+        default: 'WAITING',
     },
     penyelenggara: {
         type: String,
