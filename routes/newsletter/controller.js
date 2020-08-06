@@ -1,13 +1,21 @@
 const { Newsletter } = require('../../models');
 
-module.exports= {
+module.exports = {
     addNewsletter: async (req, res) => {
         try {
-            const result = await Newsletter.create({
-                ...req.body,
+            const checkedEmail = await Newsletter.findOne({
+                email: req.body.email,
             });
-
-            res.send({ message: 'Add Newsletter succes', data: result });
+            if (checkedEmail) {
+                return res.send({
+                    message: `Email is already subscribe`,
+                });
+            } else {
+                const result = await Newsletter.create({
+                    ...req.body,
+                });
+                res.send({ message: 'Add Newsletter succes', data: result });
+            }
         } catch (error) {
             res.send(error);
         }
@@ -36,17 +44,16 @@ module.exports= {
         }
     },
 
-    deleteNewsletter: async (req, res) =>{
+    deleteNewsletter: async (req, res) => {
         const { id } = req.params;
         try {
             await Newsletter.deleteOne({
-                _id:id,
+                _id: id,
             });
 
             res.send({ message: 'deleted succes' });
         } catch (error) {
             res.send(error);
         }
-    }
-
+    },
 };
