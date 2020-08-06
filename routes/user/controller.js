@@ -266,4 +266,28 @@ module.exports = {
             res.send(error);
         }
     },
+    getAllCategoryCount: async (req, res) => {
+        let categoryAmount = [];
+        try {
+            const category = await User.distinct('category');
+
+            for (let i = 0; i < category.length; i++) {
+                if (category[i] !== '') {
+                    const amount = await User.countDocuments({
+                        category: category[i],
+                    });
+                    let data = new Object();
+                    data['category'] = category[i];
+                    data['amount'] = amount;
+
+                    categoryAmount.push(data);
+                }
+            }
+
+            res.send(categoryAmount);
+        } catch (error) {
+            res.send(error);
+            console.log(error);
+        }
+    },
 };
