@@ -90,6 +90,22 @@ module.exports = {
             res.send(error);
         }
     },
+    updateUserAdmin: async (req, res) => {
+        const id = req.params.id;
+
+        try {
+            const result = await User.findByIdAndUpdate(
+                { _id: id },
+                {
+                    ...req.body,
+                }
+            );
+
+            res.send({ message: 'success update profil', data: result });
+        } catch (error) {
+            res.send(error);
+        }
+    },
     getAllUser: async (req, res) => {
         try {
             const result = await User.find();
@@ -229,6 +245,17 @@ module.exports = {
             res.send(error);
         }
     },
+    getPendingSpeaker: async (req, res) => {
+        try {
+            const result = await User.find({
+                role: 'SPEAKER',
+                status: 'PENDING',
+            });
+            res.send(result);
+        } catch (error) {
+            res.send(error);
+        }
+    },
     deleteUser: async (req, res) => {
         const id = req.params.id;
         try {
@@ -237,6 +264,30 @@ module.exports = {
             res.send({ message: 'deleted' });
         } catch (error) {
             res.send(error);
+        }
+    },
+    getAllCategoryCount: async (req, res) => {
+        let categoryAmount = [];
+        try {
+            const category = await User.distinct('category');
+
+            for (let i = 0; i < category.length; i++) {
+                if (category[i] !== '') {
+                    const amount = await User.countDocuments({
+                        category: category[i],
+                    });
+                    let data = new Object();
+                    data['category'] = category[i];
+                    data['amount'] = amount;
+
+                    categoryAmount.push(data);
+                }
+            }
+
+            res.send(categoryAmount);
+        } catch (error) {
+            res.send(error);
+            console.log(error);
         }
     },
 };
