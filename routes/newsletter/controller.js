@@ -6,9 +6,10 @@ module.exports = {
             const checkedEmail = await Newsletter.findOne({
                 email: req.body.email,
             });
-            if (checkedEmail) {
+            if (checkedEmail) 
                 return res.send({
                     message: `Email is already subscribe`,
+                    checked: `send`,
                 });
             } 
                 const result = await Newsletter.create({
