@@ -66,6 +66,9 @@ const transactionSchema = Schema({
         type: String,
         default: 'PENDING',
     },
+    penyelenggara: {
+        type: String,
+    },
     createdAt: {
         type: Date,
         default: Date.now,

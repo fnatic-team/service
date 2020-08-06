@@ -51,13 +51,25 @@ const userSchema = Schema({
         type: String,
     },
     fee: {
-        type: String,
+        type: Number,
     },
     cv: {
         type: String,
     },
     rating: {
         type: Number,
+    },
+    link_fb: {
+        type: String,
+    },
+    link_ig: {
+        type: String,
+    },
+    link_tw: {
+        type: String,
+    },
+    link_yt: {
+        type: String,
     },
     createdAt: {
         type: Date,
