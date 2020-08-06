@@ -9,7 +9,7 @@ module.exports = {
             if (checkedEmail) 
                 return res.send({
                     message: `Email is already subscribe`,
-                    cheked: `send`,
+                    
                 });
              
                 const result = await Newsletter.create({
