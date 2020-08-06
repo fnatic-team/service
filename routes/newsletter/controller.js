@@ -10,12 +10,12 @@ module.exports = {
                 return res.send({
                     message: `Email is already subscribe`,
                 });
-            } else {
+            } 
                 const result = await Newsletter.create({
                     ...req.body,
                 });
                 res.send({ message: 'Add Newsletter succes', data: result });
-            }
+            
         } catch (error) {
             res.send(error);
         }
