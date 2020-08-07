@@ -22,7 +22,13 @@ const {
     updateUserAdmin,
     getCategory,
     getAllCategoryCount,
+    facebookAuthenticated,
+    googleAuthenticated,
 } = require('./controller');
+const {
+    facebookAuthenticate,
+    googleAuthenticate,
+} = require('../../helpers/auth');
 
 router.post('/', Registration);
 router.post('/login', userLogin);
@@ -42,5 +48,8 @@ router.get('/pendingSpeaker', verifyToken, getPendingSpeaker);
 router.get('/InActiveSpeaker', verifyToken, getInActiveSpeaker);
 router.get('/allCategoryCount', getAllCategoryCount);
 router.delete('/:id', verifyToken, deleteUser);
+
+router.post('/auth/facebook', facebookAuthenticate, facebookAuthenticated);
+router.post('/auth/google', googleAuthenticate, googleAuthenticated);
 
 module.exports = router;

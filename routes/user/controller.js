@@ -1,7 +1,9 @@
 const { User } = require('../../models');
-const { hashPassword } = require('../../helpers');
+const { hashPassword, verifyToken } = require('../../helpers');
 const bcrypt = require('bcryptjs');
 const { createToken } = require('../../helpers/token');
+const { JWT_SECRET } = require('../../config');
+const jwt = require('jsonwebtoken');
 
 module.exports = {
     Registration: async (req, res) => {
@@ -287,6 +289,34 @@ module.exports = {
             res.send(categoryAmount);
         } catch (error) {
             res.send(error);
+            console.log(error);
+        }
+    },
+
+    facebookAuthenticated: async (req, res) => {
+        try {
+            const decoded = await jwt.verify(req.token, JWT_SECRET);
+
+            res.send({
+                message: 'Successfully login',
+                token: req.token,
+                user: decoded,
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
+    googleAuthenticated: async (req, res) => {
+        try {
+            const decoded = await jwt.verify(req.token, JWT_SECRET);
+
+            res.send({
+                message: 'Successfully login',
+                token: req.token,
+                user: decoded,
+            });
+        } catch (error) {
             console.log(error);
         }
     },
