@@ -62,6 +62,7 @@ module.exports = {
                     const adminData = {
                         id: addAdmin._id,
                         username: addAdmin.username,
+                        fullname: addAdmin.fullname,
                         role: addAdmin.role,
                     };
 

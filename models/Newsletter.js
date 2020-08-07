@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const newsletterSchema = Schema({
     email:{
         type: String,
-        require: true,
+        unique: true,
     },
 
     createdAt: {

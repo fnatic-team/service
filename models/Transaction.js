@@ -42,6 +42,7 @@ const transactionSchema = Schema({
     },
     jml_peserta: {
         type: Number,
+        default: 0,
     },
     durasi: {
         type: Number,
@@ -54,6 +55,10 @@ const transactionSchema = Schema({
     bukti_transaksi: {
         type: String,
     },
+    jumlah_bayar: {
+        type: Number,
+        default: 0,
+    },
     status_speaker: {
         type: String,
         default: 'PENDING',
@@ -64,7 +69,7 @@ const transactionSchema = Schema({
     },
     status_transaksi: {
         type: String,
-        default: 'PENDING',
+        default: 'MENUNGGU KONFIRMASI SPEAKER',
     },
     penyelenggara: {
         type: String,
