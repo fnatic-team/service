@@ -268,25 +268,20 @@ module.exports = {
             res.send(error);
         }
     },
-    getAllCategoryCount: async (req, res) => {
-        let categoryAmount = [];
+    getAllLocation: async (req, res) => {
+        const locationName = [];
         try {
-            const category = await User.distinct('category');
+            const locations = await User.distinct('location');
 
-            for (let i = 0; i < category.length; i++) {
-                if (category[i] !== '') {
-                    const amount = await User.countDocuments({
-                        category: category[i],
-                    });
+            for (let i = 0; i < locations.length; i++) {
+                if (locations[i] !== '' && locations[i] !== 'none') {
                     let data = new Object();
-                    data['category'] = category[i];
-                    data['amount'] = amount;
+                    data['name'] = locations[i];
 
-                    categoryAmount.push(data);
+                    locationName.push(data);
                 }
             }
-
-            res.send(categoryAmount);
+            res.send(locationName);
         } catch (error) {
             res.send(error);
             console.log(error);
