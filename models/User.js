@@ -43,15 +43,18 @@ const userSchema = Schema({
     },
     language: {
         type: String,
+        default: 'Indonesia'
     },
     address: {
         type: String,
     },
     location: {
         type: String,
+        default: 'Jakarta',
     },
     fee: {
         type: Number,
+        default: 0,
     },
     cv: {
         type: String,
