@@ -64,7 +64,7 @@ const transactionSchema = Schema({
     },
     status_transaksi: {
         type: String,
-        default: 'WAITING',
+        default: 'MENUNGGU KONFIRMASI SPEAKER',
     },
     penyelenggara: {
         type: String,
