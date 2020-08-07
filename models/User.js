@@ -43,7 +43,7 @@ const userSchema = Schema({
     },
     language: {
         type: String,
-        default: 'Indonesia'
+        default: 'Indonesia',
     },
     address: {
         type: String,
