@@ -54,6 +54,9 @@ const transactionSchema = Schema({
     bukti_transaksi: {
         type: String,
     },
+    jumlah_bayar: {
+        type: String,
+    },
     status_speaker: {
         type: String,
         default: 'PENDING',
