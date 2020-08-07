@@ -42,6 +42,7 @@ const transactionSchema = Schema({
     },
     jml_peserta: {
         type: Number,
+        default: 0,
     },
     durasi: {
         type: Number,
@@ -55,7 +56,8 @@ const transactionSchema = Schema({
         type: String,
     },
     jumlah_bayar: {
-        type: String,
+        type: Number,
+        default: 0,
     },
     status_speaker: {
         type: String,
