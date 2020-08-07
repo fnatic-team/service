@@ -71,6 +71,24 @@ const userSchema = Schema({
     link_yt: {
         type: String,
     },
+    facebookProvider: {
+        type: {
+            id: String,
+            token: String,
+        },
+        select: false,
+    },
+    googleProvider: {
+        type: {
+            id: String,
+            token: String,
+        },
+        select: false,
+    },
+    isSosialLogin: {
+        type: Boolean,
+        default: false,
+    },
     createdAt: {
         type: Date,
         default: Date.now,
