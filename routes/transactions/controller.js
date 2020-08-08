@@ -5,7 +5,8 @@ module.exports = {
         try {
             const result = await Transaction.find()
                 .populate('speakerID')
-                .populate('audienceID');
+                .populate('audienceID')
+                .populate('adminID');
 
             res.send({ message: 'Get All Transaksi', data: result });
         } catch (error) {
