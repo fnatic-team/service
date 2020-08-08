@@ -8,7 +8,7 @@ router.post(
     verifyToken,
     require('./controller').addTransaction
 );
-router.get('/alltrans', require('./controller').getTransaction);
+router.get('/alltrans', verifyToken, require('./controller').getTransaction);
 router.put(
     '/update/:id',
     verifyToken,
