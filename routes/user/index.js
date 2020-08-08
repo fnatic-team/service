@@ -34,7 +34,7 @@ router.post('/', Registration);
 router.post('/login', userLogin);
 router.put('/:id', verifyToken, updateProfil);
 router.put('/editAdmin/:id', verifyToken, updateUserAdmin);
-router.get('/allUser', getAllUser);
+router.get('/allUser', verifyToken, getAllUser);
 router.get('/audience', verifyToken, getAllAudience);
 router.get('/speaker', verifyToken, getAllSpeaker);
 router.get('/userId/:id', verifyToken, getUser);
