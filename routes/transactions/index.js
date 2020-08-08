@@ -20,8 +20,6 @@ router.delete(
     require('./controller').deleteTransaction
 );
 
-router.get('/alltrans', verifyToken, require('./controller').getTransaction);
-
 router.get('/name/', verifyToken, require('./controller').filterByName);
 router.get('/transId/:id', verifyToken, getTrasnId);
 
