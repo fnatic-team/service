@@ -78,7 +78,7 @@ const transactionSchema = Schema({
         type: String,
     },
     nom_trans_adm: {
-        type: String,
+        type: Number,
     },
     createdAt: {
         type: Date,
