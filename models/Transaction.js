@@ -14,6 +14,10 @@ const transactionSchema = Schema({
         type: Schema.Types.ObjectId,
         ref: 'users',
     },
+    adminID: {
+        type: Schema.Types.ObjectId,
+        ref: 'admins',
+    },
     email: {
         type: String,
     },
