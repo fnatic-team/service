@@ -8,6 +8,7 @@ router.post(
     verifyToken,
     require('./controller').addTransaction
 );
+router.get('/alltrans', require('./controller').getTransaction);
 router.put(
     '/update/:id',
     verifyToken,
@@ -18,8 +19,6 @@ router.delete(
     verifyToken,
     require('./controller').deleteTransaction
 );
-
-router.get('/alltrans', verifyToken, require('./controller').getTransaction);
 
 router.get('/name/', verifyToken, require('./controller').filterByName);
 router.get('/transId/:id', verifyToken, getTrasnId);
