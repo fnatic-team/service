@@ -14,6 +14,10 @@ const transactionSchema = Schema({
         type: Schema.Types.ObjectId,
         ref: 'users',
     },
+    adminID: {
+        type: Schema.Types.ObjectId,
+        ref: 'admins',
+    },
     email: {
         type: String,
     },
@@ -73,6 +77,12 @@ const transactionSchema = Schema({
     },
     penyelenggara: {
         type: String,
+    },
+     bukti_trans_adm: {
+        type: String,
+    },
+    nom_trans_adm: {
+        type: Number,
     },
     createdAt: {
         type: Date,

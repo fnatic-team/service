@@ -20,10 +20,9 @@ const {
     getSpeaker,
     getPendingSpeaker,
     updateUserAdmin,
-    getCategory,
-    getAllCategoryCount,
     facebookAuthenticated,
     googleAuthenticated,
+    getAllLocation,
 } = require('./controller');
 const {
     facebookAuthenticate,
@@ -46,7 +45,7 @@ router.get('/activeSpeaker', getActiveSpeaker);
 router.get('/activeSpeaker/:id', getSpeaker);
 router.get('/pendingSpeaker', verifyToken, getPendingSpeaker);
 router.get('/InActiveSpeaker', verifyToken, getInActiveSpeaker);
-router.get('/allCategoryCount', getAllCategoryCount);
+router.get('/userLocation', getAllLocation);
 router.delete('/:id', verifyToken, deleteUser);
 
 router.post('/auth/facebook', facebookAuthenticate, facebookAuthenticated);
