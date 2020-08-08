@@ -74,6 +74,12 @@ const transactionSchema = Schema({
     penyelenggara: {
         type: String,
     },
+     bukti_trans_adm: {
+        type: String,
+    },
+    nom_trans_adm: {
+        type: String,
+    },
     createdAt: {
         type: Date,
         default: Date.now,
