@@ -12,12 +12,14 @@ const {
     getAllSpeakerUnverified,
     getAllSpeakerInactive,
     getAllAudienceActive,
-    getAllAudienceInactive
+    getAllAudienceInactive,
+    getAdmin,
 } = require('./controller');
 
 router.post('/add/:roles', addAdmin);
 router.post('/login', adminLogin);
 router.get('/getAllAdmin', verifyToken, getAllAdmin);
+router.get('/getAdmin/:id', verifyToken, getAdmin);
 router.put('/:id', verifyToken, updateAdmin);
 router.delete('/:id', verifyToken, deleteAdmin);
 router.get('/getallspeakeractive', verifyToken, getAllSpeakerActive);
