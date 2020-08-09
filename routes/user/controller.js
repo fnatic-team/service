@@ -173,15 +173,25 @@ module.exports = {
         }
     },
     filterSpeakerByName: async (req, res) => {
-        const user = req.query.user;
+        const { user, location } = req.query;
         try {
             const result = await User.find({
                 role: 'SPEAKER',
                 status: 'ACTIVE',
-                name: {
-                    $regex: user,
-                    $options: 'i',
-                },
+                $and: [
+                    {
+                        name: {
+                            $regex: user,
+                            $options: 'i',
+                        },
+                    },
+                    {
+                        location: {
+                            $regex: location,
+                            $options: 'i',
+                        },
+                    },
+                ],
             });
 
             res.send(result);
